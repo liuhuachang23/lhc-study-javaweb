@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js数组</title>
+
+    <script type="text/javascript">
+
+        /*
+        js 数组的定义
+            格式：
+                var 数组名 = [];   空数组
+                var 数组名 = [1,'abc',true];   定义时同时赋值元素
+
+            我们通过数组下标赋值，那么最大的下标值，就会自动的给数组做扩容操作
+
+        */
+
+        var arr = [];               //定义一个空数组
+        //alert( arr.length );      //长度为0
+        arr[0] = 12;                //添加元素
+        //alert(arr.length);        //长度变为1
+        arr[2] = "abc";             //直接给下标为2的位置(跳过了arr[1]) 赋值
+        //alert(arr.length);        //长度变为3
+        //alert(arr[1]);            //undefined （未定义）
+
+        //数组的遍历
+        for (var i = 0; i < arr.length; i++) {
+            alert(arr[i]);
+        }
+
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

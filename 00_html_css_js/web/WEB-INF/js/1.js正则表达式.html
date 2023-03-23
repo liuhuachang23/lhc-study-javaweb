@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js正则表达式</title>
+
+    <script type="text/javascript">
+
+        //js正则表达式对象有两种创建方式
+        //例如：要求字符串中，是否包含字母e
+        //1）var patt = new RegExp("e");
+        //2）var patt = /e/;   // 两个斜杠也表示正则表达式对象
+
+        // 表示要求字符串中，是否包含字母a或b或c
+        // var patt = /[abc]/;
+
+        // 表示要求字符串，是否包含小写字母
+        // var patt = /[a-z]/;
+
+        // 表示要求字符串，是否包含任意大写字母
+        // var patt = /[A-Z]/;
+
+        // 表示要求字符串，是否包含任意数字
+        // var patt = /[0-9]/;
+
+        // 表示要求字符串，是否包含字母，数字，下划线
+        // var patt = /\w/;
+
+        // 表示要求字符串，是否包含 非(字母，数字，下划线)
+        // var patt = /\W/;
+
+        // 表示要求 字符串中是否包含至少一个a
+        // var patt = /a+/;
+
+        // 表示要求 字符串中是否 包含 >=0 个a
+        // var patt = /a*/;
+
+        // 表示要求 字符串是否 包含 0|1 个a
+        // var patt = /a?/;
+
+        // 表示要求 字符串是否包含连续三个a
+        // var patt = /a{3}/;
+
+        // 表示要求 字符串是否包 至少3个连续的a，最多5个连续的a
+        // var patt = /a{3,5}/;
+
+        // 表示要求 字符串是否包 至少3个连续的a，
+        // var patt = /a{3,}/;
+
+        // 表示要求 字符串必须以a结尾
+        // var patt = /a$/;
+
+        // 表示要求 字符串必须以a打头
+        // var patt = /^a/;
+
+        // 要求字符串，从头到尾都必须完全匹配(整体匹配)
+        //var patt = /^\w{5,12}$/;
+
+        var str = "sj22[[[";
+
+        alert( patt.test(str) );
+
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

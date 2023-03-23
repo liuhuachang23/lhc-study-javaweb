@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> v-if  v-else 和 v-show </title>
+    <!--vue.js包-->
+    <script language="JavaScript" src="../script/vue.js"></script>
+    <!--js代码-->
+    <script language="JavaScript">
+
+        window.onload = function () {
+
+            var vue = new Vue({
+                "el": "#div0",
+                "data": {
+                    num: 1
+                }
+            })
+        }
+
+    </script>
+</head>
+<body>
+<div id="div0">
+    <!--通过双向绑定 我们可以在页面input输入框中控制 mun的value值-->
+    <input type="text" v-model:value="num"/>
+    <!-- 1. v-if 如果满足 num%2==0 就显示这个标签 -->
+    <div v-if="num%2==0" style="width: 200px; height: 200px; background-color: chartreuse;">&nbsp</div>
+    <!-- 2. v-else 否则显示这个标签 -->
+    <div v-else="num%2==0" style="width: 200px; height: 200px; background-color: coral;">&nbsp</div>
+    <!-- 注意: v-if 和 v-else 之间不能有其他的结点 -->
+
+    <hr/>
+
+    <!-- 3. v-show 通过display属性来控制这个标签是否显示 即:如果满足条件就显示 不满足就不显示出来-->
+    <div v-show="num%2==0" style="width: 200px; height: 200px; background-color: blueviolet;">&nbsp</div>
+
+
+</div>
+
+</body>
+</html>

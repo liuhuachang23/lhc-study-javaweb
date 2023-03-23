@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> v-on 事件驱动 </title>
+    <!--vue.js包-->
+    <script language="JavaScript" src="../script/vue.js"></script>
+    <!--js代码-->
+    <script language="JavaScript">
+
+        window.onload = function () {
+
+            var vue = new Vue({
+                "el": "#div0",
+                //data数据
+                "data": {
+                    msg:"hello world!"
+                },
+                //methods方法 即该绑定标签里的方法
+                "methods":{
+                    //myReverse方法
+                    myReverse:function () {
+                        //this.msg      调用data中的数据
+                        //split("")     将字符串每一个字符拆开
+                        //reverse()     反转
+                        //join("")      将每一个单字符连成字符串
+                       this.msg = this.msg.split("").reverse().join("")
+                    }
+                }
+            })
+        }
+
+    </script>
+</head>
+<body>
+<!--被vue对象绑定的标签-->
+<div id="div0">
+    <span>{{msg}}</span>
+    <!-- v-on:click 表示绑定点击事件 也可以简写为 @click -->
+    <input type="button" value="反转" v-on:click="myReverse"/>
+    <input type="button" value="反转" @click="myReverse"/>
+</div>
+
+</body>
+</html>

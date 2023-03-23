@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>getElementById</title>
+    <script type="text/javascript">
+
+        /*
+        * 需求：当用户点击了较验按钮，要获取输出框中的内容。然后验证其是否合法
+        * 验证的规则是：必须由字母，数字。下划线组成。并且长度是 5 到 12 位。
+        * */
+
+        function onclickFun() {
+            //1. 当我们要操作一个标签的时候，一定要先获取这个标签对象
+            var usernameObj = document.getElementById("username");
+            //alert(usernameObj) // [object HTMLInputElement] 这个就是dom对象
+            //2. usernameObj(dom对象) 得到输入框中的内容 (value属性可以设置输入框内容的默认值，它是和输入框中的内容关联的)
+            var usernameText = usernameObj.value;
+            //3. 通过正则表达式，来验证这个内容(字符串) 是否满足需求
+            var patt = /^\w{5,12}$/;
+            /*
+            * test() 用于测试某个字符串，是不是匹配我的规则
+            * 匹配就返回true，不匹配就返回false
+            * */
+            if (patt.test(usernameText)){
+                alert("用户名合法！");
+            } else {
+                alert("用户名不合法！");
+            }
+        }
+
+    </script>
+</head>
+<body>
+    用户名：<input type="text" id="username" value=""/>
+
+    <button onclick="onclickFun()">校验</button>
+</body>
+</html>

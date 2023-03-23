@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue-双向绑定</title>
+    <!--vue.js包-->
+    <script language="JavaScript" src="../script/vue.js"></script>
+    <!--js代码-->
+    <script language="JavaScript">
+
+        window.onload = function () {
+
+            var vue = new Vue({
+                "el": "#div0",
+                "data": {
+                    //key:value
+                    msg: "hell word!!!",
+                    //key:value
+                    uname: "张三丰"
+                }
+            })
+        }
+
+    </script>
+</head>
+<body>
+<div id="div0">
+    <span>{{msg}}</span> <br/>
+    <span>{{uname}}</span> <hr/>
+    <!-- v-model  表示双向绑定
+        1. 什么是双向绑定
+            1)之前的 v-bind 是通过uanme的value值来控制input框内容
+            2)现在 v-model 不仅可以通过 msg的value值 来控制input框的内容,
+                          还可以在页面上改变input框的内容来修改msg的value值
+     -->
+    <input type="text" v-bind:value="uname"/>
+    <input type="text" v-model:value="msg"/>  <hr/>
+
+    <!-- 2. v-model:value 中 :value可以省略  -->
+    <input type="text" v-model="msg"/>
+
+    <!-- 3. trim 可以去除首尾空格-->
+    <input type="text" v-model.trim="msg"/>
+</div>
+
+</body>
+</html>

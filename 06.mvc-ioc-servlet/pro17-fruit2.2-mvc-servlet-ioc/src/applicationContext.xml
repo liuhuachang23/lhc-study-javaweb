@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?> <!--XML声明-->
+
+<!--XML正文-->
+<beans>
+
+
+    <bean id="fruitDAO" class="com.atguigu.fruit.dao.impl.FruitDAOImpl"/>
+
+    <bean id="fruitService" class="com.atguigu.fruit.service.impl.FruitServiceImpl">
+        <!-- property标签用来表示属性 FruitServiceImpl类中的属性， name表示属性名，ref表示其他bean标签的id
+                name = "fruitDAO" 表示 com.atguigu.fruit.service.impl.FruitServiceImpl 里面的fruitDAO属性
+                ref表示其他 bean标签的id
+        -->
+        <property name="fruitDAO" ref="fruitDAO"/>
+    </bean>
+
+    <!-- 将servletPath中涉及的名字 对应的是fruit，那么让 FruitController来处理 -->
+    <bean id="fruit" class="com.atguigu.fruit.controller.FruitController">
+        <!-- property标签用来表示属性， name表示属性名，ref表示其他bean标签的id -->
+        <property name="fruitService" ref="fruitService"/>
+    </bean>
+
+
+</beans>
+
+<!--
+1.概念
+HTML：超文本标记语言
+XML： 可扩展的标记语言
+HTML是XML的一个子集
+
+2.XML包含三部分
+1) XML声明 （必须在XML文件的第一行）
+2) DTD文档类型定义 （非必要部分）
+3) XML正文
+-->
+
+<!--
+Node结点分为：
+    Element 元素结点
+    Text 文本结点
+
+如： <sname> 和 </sname> 属于元素结点
+    jim 和其前后两个空格 属于文本结点
+<sname>  jim  </sname>
+-->

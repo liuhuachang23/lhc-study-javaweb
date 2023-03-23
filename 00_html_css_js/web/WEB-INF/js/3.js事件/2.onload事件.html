@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>onload事件</title>
+    <script type="text/javascript">
+        //onload事件的方法(用于静态注册时调用)
+        function onloadFun() {
+            alert('静态注册 加载完成事件')
+        }
+
+        //onload事件 动态注册，是固定的
+        window.onload = function () {
+            alert("动态注册 加载完成事件")
+        }
+
+    </script>
+</head>
+
+<!--
+    静态注册：(直接在 body标签中 调用这个事件的方法)
+        <body onload="onloadFun()">
+-->
+
+<!-- onload="onloadFun()"-->
+<body>
+
+</body>
+</html>

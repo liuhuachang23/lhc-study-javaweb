@@ -1,0 +1,55 @@
+Axios 和 JSON
+
+Axios是Ajax的一个框架,简化Ajax操作
+
+    1、Axios执行Ajax操作的步骤：
+
+    1) 添加并引入axios的js文件
+
+    2) 客户端向服务器端异步发送 普通参数值
+
+        - 基本格式： axios().then().catch()
+
+        - 示例：
+            axios({
+              method:"POST",
+              url:"....",
+              params:{
+                  uname:"lina",
+                  pwd:"ok"
+              }
+            })
+            .then(function(value){      //成功响应时执行的回调
+                                        // value.data可以获取到服务器响应内容
+             })
+            .catch(function(reason){    //有异常时执行的回调
+                                        // reason.response.data可以获取到响应的内容
+                                        // reason.message / reason.stack 可以查看错误的信息
+            });
+
+            ```
+
+    3）客户端向服务器端异步发送 JSON格式参数值
+
+
+- 什么是JSON
+	JSON是一种数据格式
+
+- JSON表达数据更简洁，更能够节约网络带宽
+- 客户端发送JSON格式的数据给服务器端
+
+	1) 客户端 中params需要修改成：  data:
+	2) 服务器 获取参数值不再是 request.getParameter()...
+	    而是：
+            StringBuffer stringBuffer = new StringBuffer("");
+            BufferedReader bufferedReader = request.getReader();
+            String str = null ;
+            while((str=bufferedReader.readLine())!=null){
+                stringBuffer.append(str);
+            }
+            str = stringBuffer.toString() ;
+
+     3) 我们会发现 str的内容如下：
+        {"uname":"lina","pwd":"ok"}
+
+- 服务器端给客户端响应JSON格式的字符串，然后客户端需要将字符串转化成js Object

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>onclick事件</title>
+    <script type="text/javascript">
+
+        //onclick事件函数(用于静态注册 时调用)
+        function onclickFun(){
+            alert("静态注册 单击事件 ");
+        }
+
+        //动态注册
+        window.onload = function () {
+            //1.获取标签对象
+            /*
+            * document 是javaScript语言提供的一个对象(文档) 它可以加载整个页面，转化成一个个对象 (下一章重点讲)
+            *
+            * getElementById：通过id属性获取标签对象
+            * 解读getElementById：
+            *   get         获取
+            *   Element     元素(标签)
+            *   BY          通过
+            *   Id          id属性
+            *
+            * */
+            var btn01Obj = document.getElementById("btn01");
+            //alert(btn01Obj); //[object HTMLButtonElement]  解读：html中button标签上的一个对象
+
+            //2. 通过得到的 标签对象.事件名 = function(){}
+            btn01Obj.onclick = function () {
+                alert("动态注册 点击事件")
+            }
+
+        }
+
+    </script>
+</head>
+<body>
+    <!--静态注册 onclick事件(点击事件)-->
+    <button onclick="onclickFun();">按钮1</button>
+    <!--动态注册 -->
+    <button id="btn01">按钮2</button>
+</body>
+</html>

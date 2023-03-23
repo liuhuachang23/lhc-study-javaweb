@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>伪类选择器</title>
+    <style>
+
+        /*未访问时*/
+        #id001:link{
+            color: red;
+        }
+
+        /*访问过后*/
+        #id003:visited{
+            color: black;
+        }
+
+        /*鼠标悬停时*/
+        #id002:hover{
+            font-size: 20px;
+        }
+
+        /*鼠标点击时*/
+        #id004:active{
+            color: yellow;
+        }
+
+    </style>
+</head>
+<body>
+    <!--伪类选择符 								    权重：0010
+        :link{属性: 属性值;属性: 属性值;} 		    定义超链接 在初始状态的样式
+        :visited{属性: 属性值;属性: 属性值;} 		定义超链接 被访问过后的样式
+        :hover{属性: 属性值;属性: 属性值;} 		定义超链接 被鼠标滑过时的样式
+        :active{属性: 属性值;属性: 属性值;} 		定义超链接 被激活时(鼠标按下未抬起)的样式
+
+    说明：
+        1）当这4个超链接伪类选择符联合使用时，应注意他们的顺序，正常顺序为：
+            选择器:link,选择器:visited,选择器:hover,选择器:active
+            错误的顺序有时会使超链接的样式失效
+        2）:hover可以使用在非超链接标签上
+            可以定义 元素被鼠标滑过时，改变自身的样式或给自身添加样式
+            可以结合后代选择符，通过 滑过父元素，改变后代元素的样式或给后代元素添加样式
+    -->
+
+    <a href="#" id="id001">link</a> <br/>
+    <a href="#" id="id003">visited</a> <br/>
+    <a href="#" id="id002">hover</a> <br/>
+    <a href="#" id="id004">active</a> <br/>
+
+</body>
+</html>

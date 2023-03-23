@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>content-box</title>
+
+    <style>
+
+        /* content-box （默认） */
+        div{
+
+            /* 默认是设置盒子的 content部分为 300*150  */
+            width: 300px;
+            height: 150px;
+
+            /* 盒子背景颜色 */
+            background: pink;
+
+            /* 设置div边框 10px */
+            border: 10px solid red;
+
+            /* 设置 内边距30px 这个会将 div撑大 因为内容部分不能变，只能撑大盒子*/
+            padding: 40px;
+
+            /*设置 外边距100px 会移动我们的盒子*/
+            margin: 100px;
+
+            /*
+            经过上面的一系列操作 盒子的宽高为
+            宽：width(内容 300) + padding(内边距 30*2) + border(边框 10*2) = 400px
+            高：height(内容 150) + padding(内边距 30*2) + border(边框 10*2) = 250px
+            content-box：自己会膨胀
+            */
+        }
+
+    </style>
+
+</head>
+<body>
+    <div>内容 内容 内容 内容 内容 内容 内容 内容 内容</div>
+</body>
+</html>

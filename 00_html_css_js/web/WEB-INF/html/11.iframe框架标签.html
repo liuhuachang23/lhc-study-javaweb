@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>iframe框架标签(内嵌窗口)</title>
+</head>
+<body>
+    <!--iframe框架标签(内嵌窗口)
+        可以在页面上开辟一个小区域显示一个单独的页面
+
+        iframe 和 a标签组合使用的步骤
+            1）在iframe标签 上面使用name属性定义一个名称
+            2）在a标签的 target属性设置iframe的name属性值
+    -->
+
+    我是一个单独的完整的页面<br/>
+    <iframe src="3.font标签.html" width="200" height="200" name="abc"></iframe><br/>
+
+    <ul>
+        <li><a href="0.编写规范.html" target="abc">编写规范</a></li>
+        <li><a href="1.标签介绍.html" target="abc">标签介绍</a></li>
+        <li><a href="3.font标签.html" target="abc">font标签</a></li>
+    </ul>
+
+    <hr/>
+</body>
+</html>

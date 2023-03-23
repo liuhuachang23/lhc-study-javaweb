@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>id选择器</title>
+    <style>
+
+        #id001{
+            color: blue;
+            font-size: 30px;
+            border: 1px solid yellow;
+        }
+
+        #id002{
+            color: red;
+            font-size: 20px;
+            border: 5px dashed blue;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- id选择器，可以让我们通过 id属性选择性的去使用这个样式 id不能重复
+            id 选择器的格式是：
+                #id属性值{
+                    属性：值;
+                }
+
+            id选择器和class选择器命名规范：
+                1）名字不能是汉字，必须是英文的小写
+                2）id或者class必须以字母开头，不能以数字或者下划线开头
+                3）不允许单个字母出现！！！不要使用拼音（不符合见名知意）
+                4）不允许带有广告的英文单词出现：如：ad adv advertising (防止浏览器当成垃圾广告处理掉 过滤掉 )
+                5）全部小写字母 连字符（_ -）
+                6）图片地址路径中禁止出现中文,图片命名不能是汉字
+
+        需求：分别定义两个 div标签， 第一个 div标签定义 id为id001 ，然后根据 id属性定义 css样式修改 字体颜色为蓝色，字体大小 30px。边框为 1px 黄色实线。
+         第二个 div标签定义 id为id002 ，然后根据 id属性定义 css样式修改 字体颜色为红色，字体大小 20px。边框为 5px 蓝色点线。
+
+    -->
+    <div id="id001">div 标签 1</div>
+    <div id="id002">div 标签 2</div>
+</body>
+</html>

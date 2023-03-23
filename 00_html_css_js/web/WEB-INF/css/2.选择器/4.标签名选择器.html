@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>标签名选择器</title>
+    <style>
+        div{
+            border: 1px solid yellow;
+            color: blue;
+            font-size: 30px;
+        }
+
+        span{
+            border: 5px dashed blue;
+            color: yellow;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!--标签名选择器，可以决定哪些标签被动的使用这个样式
+        标签名选择器的格式是：
+            标签名{
+                属性：值;
+            }
+
+    需求：在所有 div标签上修改 字体颜色 蓝色，字体大小 30px。边框为 1px 黄色实线。
+         并且修改所有 span标签的 字体颜色 黄色，字体大小 20px。边框为 5px 蓝色虚线。
+    -->
+    <div>div 标签 1</div>
+    <div>div 标签 2</div>
+    <span>span 标签 1</span>
+    <span>span 标签 2</span>
+</body>
+</html>

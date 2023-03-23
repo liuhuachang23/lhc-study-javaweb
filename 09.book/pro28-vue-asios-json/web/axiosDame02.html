@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2. 客户端向服务器端 异步发送 JSON格式的参数值</title>
+    <!-- 引入vue.js -->
+    <script language="JavaScript" src="script/vue.js"></script>
+    <!-- 引入axios.min.js -->
+    <script language="JavaScript" src="script/axios.min.js" ></script>
+    <!-- js代码 -->
+    <script language="JavaScript">
+
+        window.onload = function () {
+
+            var vue = new Vue({
+                "el": "#div0",
+                data: {
+                    uname: "lina",
+                    pwd: "ok"
+                },
+                methods: {
+                    axios02: function () {
+                        //axios表示将要发送一个异步请求
+                        axios({
+                            method:"POST",          //发送方式
+                            url:"axios02.do",       //发送地址
+                            data:{                  //发送参数 (JSON格式参数用data )
+                                //uname 和 pwd 必须和 服务器端pojo字段名相同
+                                uname:vue.uname,
+                                pwd:vue.pwd
+                            }
+                        })
+                            //当有成功回应时 执行里面的方法  （回调）
+                            .then(function (value) {
+                                console.log(value);     // value.data可以获取到服务器响应内容
+                            })
+                            //当没有成功给我回应时 执行这里的方法 ()
+                            .catch(function (reason) {
+                                console.log(reason);    // reason.response.data可以获取到服务器响应的的内容
+                                                        // reason.message / reason.stack 可以查看错误信息
+                            })
+                    }
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+<div id="div0">
+    uname:<input type="text" v-model="uname"/><br/>
+    pwd:<input type="text" v-model="pwd"/><br/>
+    <input type="button" value="发送一个带JSON参数值的异步请求" @click="axios02"/>
+</div>
+</body>
+</html>

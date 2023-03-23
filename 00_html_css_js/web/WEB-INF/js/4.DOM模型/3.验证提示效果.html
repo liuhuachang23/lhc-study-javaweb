@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>验证提示效果</title>
+    <script type="text/javascript">
+
+        /*
+        * 需求：当用户点击了较验按钮，要获取输出框中的内容。然后验证其是否合法
+        * 验证的规则是：必须由字母，数字。下划线组成。并且长度是 5 到 12 位。
+        *
+        * 并给出验证提示效果
+        * */
+        function onclickFun() {
+            //1. 获取 input标签对象
+            var usernameObj = document.getElementById("username");
+            //2. 通过 usernameObj(dom对象) 得到输入框中的内容
+            var usernameText = usernameObj.value;
+            //3. 通过正则表达式，来验证这个内容(字符串) 是否满足需求
+            var patt = /^\w{5,12}$/;
+
+            //4. 获取span标签对象
+            var usernameSpanObj = document.getElementById("usernameSpan");
+            //5. 获取DOM对象中的 innerHTML属性 （表示 起始标签和结束标签 之间的内容）
+            //  这个属性可以读写（读：读取标签之间的内容，写：编写标签之间的内容）
+            //  所以我们就利用这个属性，放到下面if语句中 用于给出验证提示效果
+            //  spanObj.innerHTML = "用户名合法！";
+            //  spanObj.innerHTML = "<img src=\'right.png'\ width=\'18'\ height=\'18'\>";
+
+            //4. 测试某个字符串，是不是匹配 patt的规则
+            if (patt.test(usernameText)){
+                //alert("用户名合法！");
+                //spanObj.innerHTML = "用户名合法！";
+                usernameSpanObj.innerHTML = "<img src=\'img/right.png'\ width=\'18'\ height=\'18'\>";
+            } else {
+                //alert("用户名不合法！");
+                //spanObj.innerHTML = "用户名不合法！";
+                usernameSpanObj.innerHTML = "<img src=\'img/wrong.png'\ width=\'18'\ height=\'18'\>";
+            }
+        }
+
+    </script>
+</head>
+<body>
+    用户名：<input type="text" id="username" value=""/>
+    <span id="usernameSpan" style="color: red"></span>
+    <button onclick="onclickFun()">校验</button>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>html4-css布局</title>
+
+    <style>
+
+        html,body{
+            padding: 0px;
+            margin: 0px;
+            height: 100%;
+        }
+
+        div{
+            /*所有div 相对定位*/
+            position: relative;
+        }
+
+        #div_top{
+            background-color: orange;
+            height: 20%;
+        }
+
+        #div_left{
+            background-color: greenyellow;
+            height: 80%;
+            width: 15%;
+            float: left;/*向左边浮动，右边的空缺部分就可以被别人使用*/
+        }
+
+        #div_main{
+            background-color: whitesmoke;
+
+        }
+
+        #div_bottom{
+             background-color: sandybrown;
+
+         }
+
+    </style>
+</head>
+<body>
+    <div id="div_top">div_top</div>
+    <div id="div_left">div_left</div>
+    <div id="div_main">div_main</div>
+    <div id="div_bottom">div_bottom</div>
+</body>
+</html>

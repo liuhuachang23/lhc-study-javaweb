@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>normalize</title>
+
+    <style>
+
+        /*normalize*/
+        *{
+            box-sizing: border-box;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        body{
+            background: antiquewhite;
+        }
+
+        div {
+            width: 300px;
+            height: 150px;
+            background: pink;
+            border: 10px solid red;
+            padding: 30px;
+            margin: 0px;/*对吧一下 设置了 padding:0px; margin:0px; 和没有设置的区别*/
+        }
+
+    </style>
+
+</head>
+<body>
+    <!--在不同的浏览器，他们的默认样式不相同
+        比如：在谷歌浏览器 和 IE浏览器 默认的 padding 和 margin 不一样
+        我们去设置 <div> 的  padding 和 margin 时，没有去管 body的 padding 和 margin (没设置就按默认的像素处理)
+        但 他们在不同的浏览器，默认值不一样，就导致 在不同浏览器 呈现出来的效果就不同，所有我们要将这些统一 就需要去设置normalize
+    -->
+
+
+    <div>内容 内容 内容 内容 内容 内容 内容 内容 内容</div>
+</body>
+</html>

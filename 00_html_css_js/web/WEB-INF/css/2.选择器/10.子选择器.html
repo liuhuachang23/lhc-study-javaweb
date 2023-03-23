@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>子选择器</title>
+
+    <style>
+        #box>a{
+            background-color: yellow;
+        }
+    </style>
+
+</head>
+<body>
+    <!--子选择符    权重：使用到的选择符权重相加之和
+
+        语法： （匹配选择到 选择符1 的 子元素 选择符2）
+            选择符1>选择符2{
+                属性: 属性值;属性: 属性值;
+            }
+        说明：选择符2必须是选择符1的子元素
+
+
+    -->
+    <div id="box">
+        <a href="#">aaa1</a>
+        <p><a href="#">aaa2</a></p>
+    </div>
+
+    <a href="#">aaa3</a>
+
+</body>
+</html>

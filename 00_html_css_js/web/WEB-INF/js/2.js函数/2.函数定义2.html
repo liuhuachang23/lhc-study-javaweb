@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js函数定义方式二</title>
+
+    <script type="text/javascript">
+
+        /*
+            函数的定义方式二：
+                var 函数名 = function(形参列表){
+                    函数体
+                };
+
+            js函数不存在 重载，相同的函数名 会直接覆盖
+        */
+
+        //定义一个无参函数
+        var fun = function(){
+            alert("无参函数")
+        };
+        fun();
+
+        //定义一个带参函数
+        var fun2 = function(a, b){
+            alert("有参函数")
+        };
+        fun2(10, "abc");
+
+        //定义一个带有返回值的函数
+        var sum = function(num1, num2){
+            var result = num1 + num2;
+            return result;
+        };
+        alert(sum(10, 20));
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

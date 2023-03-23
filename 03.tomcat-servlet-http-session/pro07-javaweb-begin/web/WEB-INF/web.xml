@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <!-- servlet标签 给Tomcat配置Servlet程序 -->
+    <servlet>
+        <!-- servlet-name标签 Servlet程序起一个别名（一般是类名） -->
+        <servlet-name>AddServlet</servlet-name>
+        <!-- servlet-class标签 是Servlet程序的全类名-->
+        <servlet-class>com.atguigu.servlets.AddServlets</servlet-class>
+    </servlet>
+    <!-- servlet-mapping标签 给servlet程序配置访问地址-->
+    <servlet-mapping>
+        <!-- servlet-name标签 是告诉服务器，我当前配置的地址给哪个Servlet程序使用-->
+        <servlet-name>AddServlet</servlet-name>
+        <!--
+            url-pattern标签配置访问地址
+               / 斜杠在服务器解析的时候，表示地址为：http://ip:port/工程路径 （工程名就是添加tomcat依赖时的 application context）
+               /add 表示地址为：http://ip:port/工程路径/add
+        -->
+        <url-pattern>/add</url-pattern>
+    </servlet-mapping>
+
+    <!--配置下面文件的目的是 让AddServlet.java 和 add.html 关联起来(即可以让AddServlet 访问到 add)-->
+    <!--
+    1. add.html 提交表单，用户发送请求，目标（action=add）
+    2. tomcat中， 在web.xml文件中找到 url-patten = /add               -》第23行
+    3. 找到 servlet-name = AddServlet                              -》第17行
+    4. 找到和 servlet-mapping 中 servlet-name 一致的 servlet         -》第10行
+    5. 找到 servlet-class = com.atguigu.servlets.AddServlets       -》第12行
+    6. 用户发生的是post请求（method=post），因此tomcat会执行AddServlet中的doPost方法
+    -->
+
+</web-app>

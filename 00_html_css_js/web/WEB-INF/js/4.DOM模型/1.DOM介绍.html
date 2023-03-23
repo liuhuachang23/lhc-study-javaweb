@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document对象</title>
+</head>
+<body>
+    <!--
+        DOM 全称是 Document Object Model 文档对象模型
+            就是把文档中的标签，属性，文本，转换成为对象来管理。
+
+        Document 对象
+            1）Document 它管理了所有的 HTML 文档内容。
+            2）document 它是一种树结构的文档，有层级关系。 (如图)
+            3）它让我们把所有的标签都对象化
+            4）我们可以通过 document 访问所有的标签对象。
+
+        什么是对象化？
+            例如:
+                <body>
+                    <div id="div01">div01</div>
+                </body>
+            我们模拟将 div对象化：
+                class Dom{                      // div对象
+                    private String id;          // id属性
+                    private String tagName;     // 标签名
+                    private Dom parentNode;     // 父亲(父级标签 body)
+                    private List<Dom> children; // 孩子结点(子级标签)
+                    private String innerHTML;   // 起始标签和结束标签中间的内容(div01)
+                }
+
+
+        Document 对象中的方法介绍
+            1）document.getElementById(elementId)
+                通过标签的 id属性 查找 标签dom对象 （返回对拥有 指定id 的第一个对象的引用）
+                elementId是标签的 id属性值
+
+            2）document.getElementsByName(elementName)
+                通过标签的 name属性 查找 标签dom对象 （返回对拥有 指定name 的对象集合）
+                elementName是标签的 name属性值
+
+            3）document.getElementsByTagName(tagname)
+                通过 标签名 查找 标签dom对象 （返回对拥有 指定标签名 的对象集合）
+                tagname是标签名
+
+            4）document.createElement( tagName)
+                通过 给定的标签名，创建一个标签对象
+                tagName是要创建的标签名
+
+        注意：
+            1）document 对象的三个查询方法，如果有 id 属性，优先使用 getElementById 方法来进行查询
+            2）如果没有 id 属性，则优先使用 getElementsByName 方法来进行查询
+            3）如果 id 属性和 name 属性都没有最后再按标签名查 getElementsByTagName
+            4）以上三个方法，一定要在页面加载完成之后执行，才能查询到标签对象
+    -->
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>交集选择器</title>
+    <style>
+        p.red {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <!-- 交集选择器
+        语法：
+            选择符1选择符2{
+                属性: 属性值;属性: 属性值;
+            }
+        说明：
+            1）交集选择，要求两个选择器紧紧挨着，中间没有空格（后代选择器需要空格）
+            2）可以任意的选择器组合，表示这同级别之间的关系  （后代选择器 不应该选同级别的选择器组合，应选择他的子元素）
+            3）给所有选择器中选中的标签中，相交的那部分标签设置属性 (后代选择器 是作用与最小的子代)
+
+        需求，就是让 p 标签中 内容为红色 的字体 变成红色
+    -->
+    <p class="red">红色</p>
+    <p class="red">红色</p>
+    <p class="green">绿色</p>
+    <div class="red">红色</div>
+    <div class="red">红色</div>
+    <div class="red">红色</div>
+    <p>蓝色</p>
+    <p>蓝色</p>
+    <p>蓝色</p>
+</body>
+</html>

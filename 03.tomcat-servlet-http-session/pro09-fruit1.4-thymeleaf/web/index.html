@@ -1,0 +1,43 @@
+<!--在html加入 thymeleaf名称空间的声明-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>水果库存</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <div id="div_container">
+        <div id="div_fruit_list">
+            <p class="center f30">欢迎使用水果库存后台管理系统</p>
+            <table id="tbl_fruit">
+                <tr>
+                    <th>名称</th>
+                    <th>单价</th>
+                    <th>库存</th>
+                    <th>操作</th>
+                </tr>
+
+                <!--在标签中 使用thymeleaf的表达式：-->
+
+                <!--先判断 会话保存作用域中的fruitList集合是否为空-->
+                <tr th:if="${#lists.isEmpty(session.fruitList)}">
+                    <td colspan="4">对不起，库存为空！</td>
+                </tr>
+                <!--不为空就开始取数据-->
+                <!-- 迭代 获取 fruitList集合中的数据（Fruit对象）-->
+                <tr th:unless="${#lists.isEmpty(session.fruitList)}"
+                    th:each="fruit : ${session.fruitList}">
+                    <td th:text="${fruit.fname}">苹果</td>    <!-- 将fruit.fname 的值覆盖到 td中(苹果的位置) -->
+                    <td th:text="${fruit.price}">5</td>      <!-- 将fruit.price 的值覆盖到 td中(5的位置) -->
+                    <td th:text="${fruit.fcount}">20</td>    <!-- 将fruit.fcount 的值覆盖到 td中(20的位置) -->
+                    <td><img src="img/del.webp" class="deImg"></td>
+                </tr>
+
+                <!-- 经过上面的迭代遍历，就可以将 t_fruit数据库中 所有数据都展示在 html中-->
+                <!-- 在html中加载java内存中的fruitList数据，这个过程我们称之为渲染-->
+
+            </table>
+        </div>
+    </div>
+</body>
+</html>

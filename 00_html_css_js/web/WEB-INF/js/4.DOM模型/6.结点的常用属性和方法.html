@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>结点的常用属性和方法</title>
+</head>
+<body>
+    <!--
+        节点就是标签对象
+
+        方法：
+            1）标签对象.getElementsByTagName() : 获取当前节点(标签)的指定标签名孩子节点(标签)
+            2）appendChild( oChildNode ) : 添加一个子节点，oChildNode 是要添加的孩子节点
+
+            3）标签对象.rows  获取标签中的所有行（如table标签中的所有tr）
+            4）标签对象.cells  获取标签中的所有列（如tr标签中的所有td）
+            5）tableObj.deleteRow(删除行的下标)  删除table中的指定下标行
+            6）tableObj.insertRow([index]) 在表中在第index行下插入一行，索引可以不写 即在表最后插入一行
+            7）tr.insertCell([index]) 在行中插入列，索引可以不写 表示在行中依次插入列
+            8）parsetInt(var) 将字符串转化为int类型
+
+            5)设置标签样式：
+                方式一：标签对象.style.属性="属性值"
+                    如 设置tr的背景颜色：tr.style.backgroundColor = "darkgrey";
+                方式二：标签对象.className="类选择器的名称" （具体样式 使用类选择器编写在css中）
+                    如 设置tr样式：tr.className="over";
+
+        属性：
+            1）childNodes 属性，获取当前节点的所有子节点 （不要忽略空白字符！！！）
+            2）firstChild 属性，获取当前节点的第一个子节点
+            3）lastChild 属性，获取当前节点的最后一个子节点
+            4）parentNode 属性，获取当前节点的父节点
+            5）nextSibling 属性，获取当前节点的下一个节点
+            6）previousSibling 属性，获取当前节点的上一个节点
+            7）className 属性，用于获取或设置标签的 class属性值
+
+            8）innerHTML 属性，表示 读/写 起始标签和结束标签中的内容 （内容包括文本和标签）
+            9）innerText 属性，表示 读/写 起始标签和结束标签中的文本 (文本 仅表示标签之间的文本)
+                当 一个父级结点 调用 innerHTML属性，会将 父级标签里面的所有内容取出来(包括子节点 和 其标签之间的文本)
+                当 一个父级结点 调用 innerText属性，会将 父级标签里面的所有文本取出来(只包含 父级标签之间的文本和其子标签之间的文本)
+
+            10)value 属性，表示 读/写 input输入框中的内容
+    -->
+</body>
+</html>

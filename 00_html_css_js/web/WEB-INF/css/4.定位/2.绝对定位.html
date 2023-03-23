@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绝对定位</title>
+
+    <style>
+
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .father{
+            width: 300px;
+            height: 300px;
+            background-color: yellowgreen;
+
+            margin-top: 100px;
+            /*将父类盒子的定位改为 非static 的 看看结果*/
+            position: relative;
+        }
+
+        .son1{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            /*绝对定位*/
+            position: absolute;
+            /*设置top为20px，因为此时的 父级盒子为static 所以它是 相对于 body 向下20px*/
+            top: 20px;
+            /*将 父类盒子设置为非static 再看看结果对比一下*/
+            /*此时 上面的 top20px 就是相对于 其父类的位置 再向下移动20px*/
+        }
+
+    </style>
+
+
+</head>
+<body>
+
+    <!-- 绝对定位
+        总结：
+            使用top、bottom、left、right、 需要看父级 的position类型
+             position为 static 就直接作用于body身上
+             position不为 static 就是作用于父级身上
+
+            不设置 top、bottom、left、right 起始位置走正常文档流
+    -->
+
+    <div class="father">
+        <div class="son1"></div>
+    </div>
+</body>
+</html>

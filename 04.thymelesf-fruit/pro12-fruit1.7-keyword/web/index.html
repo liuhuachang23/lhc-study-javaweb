@@ -1,0 +1,67 @@
+<!--在html加入 thymeleaf名称空间的声明-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>水果库存页面</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script language="JavaScript" src="js/index.js"></script>
+</head>
+<body>
+    <div id="div_container">
+        <div id="div_fruit_list">
+            <p class="center f30">欢迎使用水果库存后台管理系统</p>
+            <!--<a th:href="@{/add.html}">添加新库存记录</a>-->
+
+
+            <div style="width: 90%;margin-left: 5%;text-align: right">
+                <!--添加一个查询关键字的表单-->
+                <form th:action="@{/index}" method="post" style="float: left;width: 70%;margin-left: 14%;">
+                    <!--编写一个隐藏域，用于在服务器端IndexServlet判断-->
+                    <input type="hidden" name="oper" value="search">
+                    请输入关键字：<input type="text" name="keyword" th:value="${session.keyword}" />
+                    <input type="submit" value="查询" class="btn1">
+                </form>
+
+                <a th:href="@{/add.html}">添加新库存记录</a>
+            </div>
+
+            <table id="tbl_fruit">
+                <tr>
+                    <th>名称</th>                                                                        <!--<a th:href="@{/add.html}">添加新库存记录</a>-->
+
+                    <th>单价</th>
+                    <th>库存</th>
+                    <th>操作</th>
+                </tr>
+                <tr th:if="${#lists.isEmpty(session.fruitList)}">
+                    <td colspan="4">对不起，库存为空！</td>
+                </tr>
+                <!-- 迭代 获取 fruitList集合中的数据（Fruit对象）-->
+                <tr th:unless="${#lists.isEmpty(session.fruitList)}"
+                    th:each="fruit : ${session.fruitList}">
+
+                    <!--在水果名称上添加超链接
+                        1.添加超链接 <a href="edit.do"> ，这个edit.do会去服务器端 EditServlet 请求响应
+                        2.将 th:text="${fruit.fname}" 从td标签转到a标签中，防止a标签 在thymeleaf渲染时被覆盖
+                        3.将 a 标签的路径改成 thymeleaf形式的绝对路径
+                    -->
+                    <!--<td ><a th:text="${fruit.fname}" th:href="@{'/edit.do?fid='+${fruit.fid}}">苹果</a></td>-->
+                    <td ><a th:text="${fruit.fname}" th:href="@{/edit.do(fid=${fruit.fid})}">苹果</a></td>
+                    <td th:text="${fruit.price}">5</td>
+                    <td th:text="${fruit.fcount}">20</td>
+                    <td><img src="img/del.webp" class="deImg" th:onclick="|delFruit(${fruit.fid})|"></td>
+                </tr>
+            </table>
+
+
+            <div style="width: 90%;margin-left: 5%; padding-bottom: 6px" class="center">
+                <input type="button" value="首 页" class="btn1" th:onclick="|page(1)|" th:disabled="${session.pageNo==1}">
+                <input type="button" value="上一页" class="btn1" th:onclick="|page(${session.pageNo - 1})|"  th:disabled="${session.pageNo==1}">
+                <input type="button" value="下一页" class="btn1" th:onclick="|page(${session.pageNo + 1})|"  th:disabled="${session.pageNo==session.pageCount}">
+                <input type="button" value="尾 页" class="btn1" th:onclick="|page(${session.pageCount})|" th:disabled="${session.pageNo==session.pageCount}">
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

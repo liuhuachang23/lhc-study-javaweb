@@ -1,0 +1,78 @@
+html,body{
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    background-color:darkgrey;
+}
+
+div{
+    position: relative;
+
+}
+
+#div_container{
+    width: 80%;
+    height: 100%;
+    border: 0px solid black;
+    margin-left: 10%;
+    float: left;
+    background-color: antiquewhite;
+    border-radius: 8px;
+}
+
+#tbl_fruit{
+    width: 100%;
+    line-height: 28px;
+    margin-top: 60px;
+    background-color: whitesmoke;
+}
+
+#tbl_fruit, #tbl_fruit tr, #tbl_fruit th,#tbl_fruit td{
+    border: 1px solid gray;
+    /*边框合并*/
+    border-collapse: collapse;
+    /*各单元格 文本居中*/
+    text-align: center;
+    /*设置字体*/
+    font-size: 14px;
+    font-family: "黑体";
+    font-weight: lighter;
+    color: dimgrey;
+
+}
+
+.deImg{
+    width: 14px;
+    height: 14px;
+}
+
+/*用于鼠标悬停时样式*/
+.over{
+    color: pink;
+    background-color: darkgrey;
+}
+
+.btn1, .btn2{
+    border: 1px solid lightgray;
+    width: 60px;
+    height: 22px;
+}
+
+#div_add{
+    margin-left: 30%;
+
+}
+
+#tbl_add{
+    /*各单元格 文本居中*/
+    text-align: center;
+    /*设置字体*/
+    font-size: 12px;
+    font-family: "黑体";
+    font-weight: lighter;
+    color: dimgrey;
+
+}
+
+
+

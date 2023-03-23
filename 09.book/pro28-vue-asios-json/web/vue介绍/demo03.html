@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue-绑定元素属性</title>
+    <!--vue.js包-->
+    <script language="JavaScript" src="../script/vue.js"></script>
+    <!--js代码-->
+    <script language="JavaScript">
+
+        window.onload = function () {
+
+            var vue = new Vue({
+                "el": "#div0",
+                "data": {
+                    uname: "张三丰"
+                }
+            })
+        }
+
+    </script>
+</head>
+<body>
+<div id="div0">
+    <!-- v-bind:属性  表示绑定元素属性 -->
+    <input type="button" v-bind:value="uname"/>
+    <!-- v-bind 还可以省略 -->
+    <input type="button" :value="uname"/>
+</div>
+
+</body>
+</html>

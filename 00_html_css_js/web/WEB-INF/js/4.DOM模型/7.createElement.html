@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>createElement</title>
+
+    <script type="text/javascript">
+
+        window.onload = function () {
+            // 现在需要我们使用 js 代码来创建 html 标签，并显示在页面上
+            // 标签的内容就是：<div>湖人总冠军</div>
+
+            //1. 在内存中 创建一个 <div></div>
+            var divObj = document.createElement("div");
+
+            //2. 添加内容 到div标签之间 两种方式：
+
+            //1） 直接添加字符串 到 div标签之间
+            divObj.innerHTML = "湖人总冠军";
+
+            //2） 先创建一个文本节点对象
+            var textNodeObj = document.createTextNode("湖人总冠军");
+            // 添加子结点（将该文本结点对象 添加 到 div对象中）
+            divObj.appendChild(textNodeObj);
+
+            //3.添加子结点 （将该div结点对象 添加到body结点对象中）
+            document.body.appendChild(divObj);
+        }
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

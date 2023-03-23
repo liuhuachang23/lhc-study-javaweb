@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>列表标签</title>
+</head>
+<body>
+    <!--列表标签
+        需求1：使用无序、有序列表 把刘德华、郭富城、黎明、张学友，展示出来
+
+        ul 是无序列表
+            type属性 可以修改列表项前面的符号
+                none    不显示符号
+                disc    圆点(默认)
+                square  方块
+                circle  圆圈
+
+        ol 是有序列表
+            type属性 可以修改列表项前面的符号
+                1 表示 数字 1 2 3 4 ...
+                A 表示 大写字母 A B C D ...
+                a 表示 小写字母 a b c d ...
+                I 表示 大写罗马数字 I II III IV V ...
+                i 表示 小写罗马数字 i ii iii iv v ...
+            start属性 表示从*开始
+                比如 type="A" start="2" 就是从 B开始编号
+
+        li是 列表项
+
+    -->
+
+    <ul type="none">
+        <li>刘德华</li>
+        <li>郭富城</li>
+        <li>黎明</li>
+        <li>张学友</li>
+    </ul>
+
+    <ol type="A" start="2">
+        <li>刘德华</li>
+        <li>郭富城</li>
+        <li>黎明</li>
+        <li>张学友</li>
+    </ol>
+</body>
+</html>

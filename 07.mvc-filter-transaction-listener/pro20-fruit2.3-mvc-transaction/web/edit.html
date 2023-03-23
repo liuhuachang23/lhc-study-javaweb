@@ -1,0 +1,48 @@
+<!--在html加入 thymeleaf名称空间的声明-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>修改表单</title>
+    <link rel="stylesheet" type="text/css" href="css/edit.css">
+</head>
+<body>
+<div id="div_container">
+    <div id="div_fruit_list">
+        <p class="center f30">修改水果库存信息</p>
+        <!--将这个table放在form表单中，提交的地址为 ..update.do
+        这个update.do会去服务器端 UpdateServlet 请求响应
+        -->
+        <form method="post" th:action="@{/fruit.do}" th:object="${fruit}">
+            <input type="hidden" name="operate" value="update">
+            <!--我们希望把fid发送给服务器端，又不想在界面上显示出来，使用隐藏域-->
+            <input type="hidden" name="fid" th:value="*{fid}">
+            <table id="tbl_fruit" >
+                <tr>
+                    <th>名称：</th>
+                    <!--<td><input type="text" name="fname" th:value="${fruit.fname}"/></td>-->
+                    <td><input type="text" name="fname" th:value="*{fname}"/></td>
+                </tr>
+                <tr>
+                    <th>单价：</th>
+                    <td><input type="text" name="price" th:value="*{price}"/></td>
+                </tr>
+                <tr>
+                    <th>库存：</th>
+                    <td><input type="text" name="fcount" th:value="*{fcount}"/></td>
+                </tr>
+                <tr>
+                    <th>备注：</th>
+                    <td><input type="text" name="remark" th:value="*{remark}"/></td>
+                </tr>
+                <tr>
+                    <th colspan="2">
+                        <input type="submit" value="修改"/>
+                    </th>
+                </tr>
+            </table>
+        </form>
+
+    </div>
+</div>
+</body>
+</html>

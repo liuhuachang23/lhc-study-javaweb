@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数的隐形参数</title>
+
+    <script type="text/javascript">
+
+        /*
+            函数的 arguments 隐形参数（只在 function 函数内）
+
+                function函数中不需要定义，但却可以直接用来获取所有参数的变量。我们管它叫隐形参数。,
+
+                隐形参数特别像 java基础的可变长参数一样，他是一个数组
+                java中：public void fun( Object ... args );
+        */
+
+        //1、function函数中不需要定义，但却可以直接用来获取所有参数的变量。我们管它叫隐形参数
+        function fun(){
+            alert(arguments); // [object Arguments]
+            alert(arguments.length); // 2（取决于传参的个数）
+        }
+        //传入 1, "abc" 两个参数
+        //fun(1,"abc");
+
+        //2、隐形参数特别像 java基础的可变长参数一样，他是一个数组
+        function fun2(){
+            alert(arguments[0]); // 1
+            alert(arguments[1]); // abc
+            alert(arguments[2]); // true
+            alert(arguments[3]); // undefined (未赋值)
+            //还可以直接遍历
+            for (var i = 0; i < arguments.length; i++) {
+                alert(arguments[i])
+            }
+        }
+        //传入 1, "abc", true 三个参数
+        //fun2(1, "abc", true)
+
+
+        //需求：要求填写一个函数，用于计算所有参数相加的和并返回
+        //我们就可以直接写 2个形参的函数（相比于直接写无参函数 更规范），在函数体内完成需求
+        //有多少个参数 参与计算我们不管,在调用函数的时候传入即可（利用函数的隐式参数）
+        function sum(sum1, sum2) {
+            var total = 0;
+            for (var i = 0; i < arguments.length; i++) {
+                if (typeof(arguments[i]) == "number"){ //排除类型不为数值的参数
+                    total += arguments[i]
+                }
+            }
+            return total;
+        }
+        alert(sum(1,10,"abc",30,4));
+
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

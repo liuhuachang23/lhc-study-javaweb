@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>如何定义一个js对象</title>
+    <!--vue.js包-->
+    <script language="JavaScript" src="../script/vue.js"></script>
+    <!--js代码-->
+    <script language="JavaScript">
+
+        //如何定义一个js对象
+        //方式1:
+        var person = new Object();
+        //给person对象绑定 属性和行为
+        person.pid = "p001";            //pid属性
+        person.pname = "jim";           //pname属性
+        person.sayHELLO = function(){   //sayHELLO行为
+            alert("HELLO WORLD");
+        };
+
+        //方式2:
+        var person2 = {
+            //绑定 属性和行为 (JSON风格)
+            "pid":"p001",
+            "pname":"jim",
+            "sayHELLO":function () {
+                alert("HELLO WORLD 2")
+            }
+        };
+
+        //hello方法
+        function hello() {
+            //调用person对象的行为(方法)
+            //person1.sayHELLO();
+            person2.sayHELLO();
+        }
+
+    </script>
+</head>
+<body>
+    <div id="div0">
+        <span>HELLO</span>
+        <!--点击按钮 调用hello方法-->
+        <input type="button" value="打招呼" onclick="hello()" />
+    </div>
+</body>
+</html>

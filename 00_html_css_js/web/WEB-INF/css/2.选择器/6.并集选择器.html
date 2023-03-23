@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组合选择器</title>
+
+    <style>
+        .class01 ,
+        #id01{
+            color: blue;
+            font-size: 20px;
+            border: 1px solid yellow;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <!--组合选择器 组合选择器可以让多个选择器共用同一个 css 样式代码
+        组合选择器的格式是：
+        选择器 1，选择器 2，选择器 n{
+            属性：值;
+        }
+
+        需求：修改 class="class01" 的 div 标签 和 id="id01" 所有的 span 标签.
+            字体颜色为蓝色，字体大小 20 个像素。 边框为 1 像素黄色实线。
+    -->
+
+    <div id="id01">div 标签 class01</div> <br />
+    <span class="class01">span 标签</span> <br />
+    <div>div 标签</div> <br />
+    <div>div 标签 id01</div> <br />
+
+
+</body>
+</html>

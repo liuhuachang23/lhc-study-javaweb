@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css的引入方式</title>
+    <!--style 标签专门用来定义 css 内部样式代码-->
+    <style>
+        p{
+            font-family: "宋体";
+            font-size: 10px;
+            color: blue;
+        }
+    </style>
+
+    <!--link 标签专门用来引入 css 外部样式代码-->
+    <link rel="stylesheet" type="text/css" href="3.css的引入方式.css">
+</head>
+<!--css的引入方式有三种
+    1. 行内样式：在标签的 style属性上设置 "key:value value;" 修改标签样式
+        这种样式的缺点：
+            1）如果标签多了。样式多了。代码量非常庞大。
+            2）可读性非常差。
+            3）Css代码没什么复用性可方言。
+
+    2. 内部样式：在 head标签中，使用 style标签来定义各种自己需要的 css样式。
+        这种方式的缺点：
+            1）只能在同一页面内复用代码，不能在多个页面中复用 css代码。
+            2）维护起来不方便，实际的项目中会有成千上万的页面，要到每个页面中去修改。工作量太大了。
+
+    3. 外部样式：把 css样式写成一个单独的 css文件，再通过 link标签引入即可复用。
+-->
+
+<!--需求演示
+    需求1：使用行内样式 修改每个 div标签的样式为：边框 1px，实线，红色。
+    需求2：使用行内部式 修改每个 p标签的样式为：字体宋体 大小10px 颜色蓝色。
+    需求3：使用行外部式 修改每个 span标签的样式为：边框 1px，实线，红色。
+-->
+<body>
+
+    <div style="border: 1px solid red">演示行内样式</div>
+    <div style="border: 1px solid red">演示行内样式</div>
+
+    <hr/>
+
+    <p>演示内部样式</p>
+    <p>演示内部样式</p>
+
+    <hr/>
+
+
+    <span>演示外部样式</span>
+    <span>演示外部样式</span>
+
+</body>
+</html>

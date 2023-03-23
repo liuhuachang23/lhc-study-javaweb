@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>创建使用Vue对象</title>
+    <!--vue.js包-->
+    <script language="JavaScript" src="../script/vue.js"></script>
+    <!--js代码-->
+    <script language="JavaScript">
+
+
+        //当页面加载完成时 调用这个匿名函数
+        window.onload = function () {
+
+            //创建vue对象
+            var vue = new Vue({
+                //1. "el" 指的是标签, "#div0" 表示标签的id为div0
+                // 即表示该vue对象绑定了 id为div0的标签
+                "el": "#div0",
+                //2. "data"表示数据,属性
+                "data": {
+                    //3. key:value
+                    msg: "hell word!!!"
+                }
+            })
+        }
+
+    </script>
+</head>
+<body>
+<!--被vue对象绑定的标签-->
+<div id="div0">
+    <!-- 绑定 date中的msg(key) 对应的value -->
+    <span>{{msg}}</span>
+</div>
+
+</body>
+</html>

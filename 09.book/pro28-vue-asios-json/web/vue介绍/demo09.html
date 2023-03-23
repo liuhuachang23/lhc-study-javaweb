@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> vue 生命周期 </title>
+    <!--vue.js包-->
+    <script language="JavaScript" src="../script/vue.js"></script>
+    <!--js代码-->
+    <script language="JavaScript">
+
+        window.onload = function () {
+
+            var vue = new Vue({
+                "el": "#div0",
+                data: {
+                    msg: "hello"
+                },
+                methods: {
+                    changeMsg: function () {
+                        //调用就自增
+                        this.msg = this.msg + 1;
+                    }
+                },
+
+                //vew的生命周期========================
+                //1. vue对象创建之前
+                beforeCreate: function () {
+                    console.log(" beforeCreate: vue对象创建之前...");
+                    console.log("data_msg " + this.msg); // undefined (指date中的 msg数据未定义)
+                },
+                //2. vue对象创建后
+                created: function () {
+                    console.log(" created: vue对象创建之后...");
+                    console.log("data_msg " + this.msg); // hello (date中的msg已经有数据了)
+                },
+                //3. data数据转载之前
+                beforeMount: function () {
+                    console.log(" beforeMount: data数据转载之前...");
+                    console.log("span01_msg " + document.getElementById("span01").innerText); // {{msg}} (指id为span01的标签中的msg 还没有转载date中msg属性的数据)
+                },
+                //4. data数据装载之后
+                mounted: function () {
+                    console.log(" mounted: data数据装载之后...");
+                    console.log("span01_msg " + document.getElementById("span01").innerText); // hello (指id为span01的标签中的msg 已经转载了date中msg属性的数据)
+                },
+                //5. data数据更新之前
+                beforeUpdate: function () {
+                    console.log(" beforeUpdate: data数据更新之前...");
+                    //点击改变按钮 data_msg 和  span01_msg 对应的值不同 (span01_msg是更新前的值, data_msg是更新后的值)
+                    console.log("data_msg " + this.msg);
+                    console.log("span01_msg " + document.getElementById("span01").innerText);
+                },
+                //6. data数据更新之后
+                updated: function () {
+                    console.log(" updated: data数据更新之后...");
+                    //点击改变按钮 data_msg 和  span01_msg 对应的值相同 (都是更新后的值)
+                    console.log("data_msg " + this.msg);
+                    console.log("span01_msg " + document.getElementById("span01").innerText);
+                }
+                //7. ....
+
+            })
+        }
+
+    </script>
+</head>
+<body>
+<!--被vue对象绑定的标签-->
+<div id="div0">
+    <span id="span01">{{msg}}</span>
+    <!--绑定点击事件 点一次调用一次 changeMsg方法-->
+    <input type="button" value="改变msg的值" @click="changeMsg"/>
+</div>
+
+</body>
+</html>

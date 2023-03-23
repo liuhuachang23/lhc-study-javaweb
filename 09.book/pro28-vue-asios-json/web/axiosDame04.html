@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4. 在js中 JSON格式字符串 和 js Object 的相互转换</title>
+    <!-- js代码 -->
+    <script language="JavaScript">
+
+        function hello01 () {
+
+            //1. 将 js String --> js Object
+
+            var str = "{\"uname\":\"lina\",\"age\":20}";
+            var user = JSON.parse(str);
+            //在客户端打印一下 user的类型
+            alert(typeof user);
+            //在客户端打印一下 user对象中的数据
+            alert(user.uname + "_" + user.age);
+
+            //2. 将 js Object --> js String
+
+            var user2 = {"uname":"鸠摩智","age":90};
+            var userJsonStr = JSON.stringify(user2);
+            //在客户端打印一下 userJsonStr的类型
+            alert(typeof userJsonStr);
+            //打印一下 这个字符串
+            alert(userJsonStr)
+
+
+            //3. 为什么服务器端和 客户端需要这样转换
+            //1）通常我们在 客户端 和 服务器端 都是使用 Object对象 来操作里面的属性
+            //2）客户端和服务端 之间需要使用 流 去接收和响应 ，使用JSON格式的字符串 是最佳选择
+            //3）所以 我们在传输的时候 要转换为 字符串，接收对方的响应后就要转换为 Object来使用
+
+        }
+    </script>
+</head>
+<body>
+<div id="div0">
+    <input type="button" value="确定" onclick="hello01()"/>
+</div>
+</body>
+</html>

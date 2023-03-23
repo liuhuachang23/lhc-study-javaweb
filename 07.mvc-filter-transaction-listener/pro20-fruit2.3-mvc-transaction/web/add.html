@@ -1,0 +1,45 @@
+<!--在html加入 thymeleaf名称空间的声明-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>添加表单</title>
+    <link rel="stylesheet" type="text/css" href="css/edit.css">
+</head>
+<body>
+<div id="div_container">
+    <div id="div_fruit_list">
+        <p class="center f30">添加水果库存信息</p>
+        <!--将这个table放在form表单中，提交的地址为 ..add.do
+        这个add.do会去服务器端 AddServlet 请求响应
+        -->
+        <form method="post" action="fruit.do">
+            <input type="hidden" name="operate" value="add" />
+            <table id="tbl_fruit" >
+                <tr>
+                    <th>名称：</th>
+                    <td><input type="text" name="fname" /></td>
+                </tr>
+                <tr>
+                    <th>单价：</th>
+                    <td><input type="text" name="price" /></td>
+                </tr>
+                <tr>
+                    <th>库存：</th>
+                    <td><input type="text" name="fcount" /></td>
+                </tr>
+                <tr>
+                    <th>备注：</th>
+                    <td><input type="text" name="remark" /></td>
+                </tr>
+                <tr>
+                    <th colspan="2">
+                        <input type="submit" value="添加"/>
+                    </th>
+                </tr>
+            </table>
+        </form>
+
+    </div>
+</div>
+</body>
+</html>

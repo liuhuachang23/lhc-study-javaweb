@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>onchange事件</title>
+    <script type="text/javascript">
+        //onchange事件函数(用于静态注册 时调用)
+        function onchangeFun() {
+            alert("女神已经改变了")
+        }
+
+        //动态注册
+        window.onload = function () {
+            //1. 获取标签对象
+            var sel01Obj = document.getElementById("sel01");
+            //alert(sel01Obj) // [object HTMLSelectElement]
+            //2. 通过得到的 标签对象.事件名 = function(){}
+            sel01Obj.onchange = function () {
+                alert("男神已经改变了")
+            }
+        }
+
+
+    </script>
+</head>
+<body>
+    请选择你心中的女神
+    <!--静态注册-->
+    <select onchange="onchangeFun()">
+        <option>--女神--</option>
+        <option>文文</option>
+        <option>芳芳</option>
+        <option>婷婷</option>
+    </select>
+
+    <br/>
+
+    请选择你心中的男神
+    <select id="sel01">
+        <option>--男神--</option>
+        <option>彦祖</option>
+        <option>国荣</option>
+        <option>杰伦</option>
+    </select>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js逻辑运算</title>
+
+    <script type="text/javascript">
+
+        /*
+        js逻辑运算符
+            1）在js语言中，所有的变量，都可以做为一个boolean类型的变量去使用
+                0、null、undefine、""(空串)  都认为是 false
+                其他的都为 true
+
+            2）&& 且运算
+                第一种：当表达式全为真。返回最后一个表达式的值。
+                第二种：当表达式中有一个为假，返回第一个为假的表达式的值
+
+            3）|| 或运算
+                第一种情况：当表达式全为假，返回最后一个表达式的值
+                第二种情况：当表达式中有一个为真，返回第一个为真的表达式的值
+
+            4）&& 和 || 有短路
+                短路就是说，当这个&&或||运算有结果了之后 。后面的表达式不再执行
+
+        */
+
+        var a = 0;
+        if (a){
+            alert("0为真")
+        } else {
+            alert("0为假")
+        }
+
+        var a = "abc";
+        var b = true;
+        var d = false;
+        var c = null;
+
+        alert(a && b); // 表达式全为真，返回最后一个表达式的值(b的值）：true
+        alert(a && d); // 当表达式中有一个为假，返回第一个为假的表达式的值(d的值)：false
+
+        alert(d || c); // 当表达式全为假，返回最后一个表达式的值(c的值)：null
+        alert(a || b); // 当表达式中有一个为真，返回第一个为真的表达式的值(a的值)：abc
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
